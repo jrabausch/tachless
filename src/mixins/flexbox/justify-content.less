@@ -1,0 +1,19 @@
+#tachless() {
+	.justify-content(@prefix: ~"") {
+
+		@mapping: {
+			start: flex-start;
+			end: flex-end;
+			center: center;
+			between: space-between;
+			around: space-around;
+			evenly: space-evenly;
+		};
+
+		each(@mapping, {
+			.@{prefix}justify-@{key} {
+				justify-content: @value;
+			}
+		});
+	}
+}

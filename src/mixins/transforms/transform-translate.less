@@ -1,0 +1,74 @@
+#tachless() {
+	.transform-translate(@prefix: ~"") {
+
+		each(@spacing, {
+
+			@val: ~"var(@{spacing-prefix}@{key})";
+
+			.@{prefix}translate-x-@{key}{
+				transform: ~"translateX(@{val})";
+			}
+
+			.@{prefix}translate-y-@{key}{
+				transform: ~"translateY(@{val})";
+			}
+
+			// negative
+
+			@negative: ~"calc(-1 * @{val})";
+
+			.@{prefix}-translate-x-@{key}{
+				transform: ~"translateX(@{negative})";
+			}
+
+			.@{prefix}-translate-y-@{key}{
+				transform: ~"translateY(@{negative})";
+			}
+		});
+
+		@fractions: {
+			1_2: 50%;
+			// TODO: use calc functions
+			1_3: 33.33333333333333%;
+			2_3: 66.66666666666667%;
+			1_4: 25%;
+			3_4: 75%;
+			1_5: 20%;
+			2_5: 40%;
+			3_5: 60%;
+			4_5: 80%;
+			full: 100%;
+		};
+
+		each(@fractions, {
+
+			@k: replace(@key, "_", "\/");
+
+			.@{prefix}translate-x-@{k}{
+				transform: ~"translateX(@{value})";
+			}
+
+			.@{prefix}translate-y-@{k}{
+				transform: ~"translateY(@{value})";
+			}
+
+			// negative
+
+			.@{prefix}-translate-x-@{k}{
+				transform: ~"translateX(-@{value})";
+			}
+
+			.@{prefix}-translate-y-@{k}{
+				transform: ~"translateY(-@{value})";
+			}
+		});
+
+		.@{prefix}translate-x-0{
+			transform: translateX(0);
+		}
+
+		.@{prefix}translate-y-0{
+			transform: translateY(0);
+		}
+	}
+}

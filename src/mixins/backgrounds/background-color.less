@@ -1,0 +1,26 @@
+#tachless() {
+	.background-color(@prefix: ~"") {
+
+		each(@colorscheme, {
+
+			@val: ~"var(@{color-prefix}@{key})";
+
+			.@{prefix}bg-color-@{key} {
+				background-color: @val;
+			}
+		});
+
+		@mapping: {
+			inherit: inherit;
+			current: currentColor;
+			transparent: transparent;
+		};
+
+		each(@mapping, {
+
+			.@{prefix}bg-color-@{key} {
+				background-color: @value;
+			}
+		});
+	}
+}

@@ -1,0 +1,17 @@
+#tachless() {
+	.line-height(@prefix: ~"") {
+
+		@mapping: {
+			none: 1;
+			title: 1.25;
+			normal: 1.5;
+		};
+
+		each(@mapping, {
+
+			.@{prefix}leading-@{key} {
+				line-height: @value;
+			}
+		});
+	}
+}

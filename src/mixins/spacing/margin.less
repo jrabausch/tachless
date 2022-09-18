@@ -1,0 +1,111 @@
+#tachless() {
+	.margin(@prefix: ~"") {
+
+		each(@spacing, {
+
+			@val: ~"var(@{spacing-prefix}@{key})";
+
+			.@{prefix}m-@{key} {
+				margin: @val;
+			}
+
+			.@{prefix}mt-@{key} {
+				margin-top: @val;
+			}
+
+			.@{prefix}mr-@{key} {
+				margin-right: @val;
+			}
+
+			.@{prefix}mb-@{key} {
+				margin-bottom: @val;
+			}
+
+			.@{prefix}ml-@{key} {
+				margin-left: @val;
+			}
+
+			.@{prefix}mh-@{key} {
+				margin-left: @val;
+				margin-right: @val;
+			}
+
+			.@{prefix}mv-@{key} {
+				margin-top: @val;
+				margin-bottom: @val;
+			}
+
+			// negative
+
+			@negative: ~"calc(-1 * @{val})";
+
+			.@{prefix}-m-@{key} {
+				margin: @negative;
+			}
+
+			.@{prefix}-mt-@{key} {
+				margin-top: @negative;
+			}
+
+			.@{prefix}-mr-@{key} {
+				margin-right: @negative;
+			}
+
+			.@{prefix}-mb-@{key} {
+				margin-bottom: @negative;
+			}
+
+			.@{prefix}-ml-@{key} {
+				margin-left: @negative;
+			}
+
+			.@{prefix}-mh-@{key} {
+				margin-left: @negative;
+				margin-right: @negative;
+			}
+
+			.@{prefix}-mv-@{key} {
+				margin-top: @negative;
+				margin-bottom: @negative;
+			}
+		});
+		
+		@mapping: {
+			0: 0;
+			auto: auto;
+		};
+
+		each(@mapping, {
+
+			.@{prefix}m-@{key} {
+				margin: @value;
+			}
+
+			.@{prefix}mt-@{key} {
+				margin-top: @value;
+			}
+
+			.@{prefix}mr-@{key} {
+				margin-right: @value;
+			}
+
+			.@{prefix}mb-@{key} {
+				margin-bottom: @value;
+			}
+
+			.@{prefix}ml-@{key} {
+				margin-left: @value;
+			}
+
+			.@{prefix}mh-@{key} {
+				margin-left: @value;
+				margin-right: @value;
+			}
+
+			.@{prefix}mv-@{key} {
+				margin-top: @value;
+				margin-bottom: @value;
+			}
+		});
+	}
+}

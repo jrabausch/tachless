@@ -1,0 +1,19 @@
+#tachless() {
+	.align-self(@prefix: ~"") {
+
+		@mapping: {
+			auto: auto;
+			start: flex-start;
+			end: flex-end;
+			center: center;
+			stretch: stretch;
+			baseline: baseline;
+		};
+
+		each(@mapping, {
+			.@{prefix}self-@{key} {
+				align-self: @value;
+			}
+		});
+	}
+}

@@ -1,0 +1,18 @@
+#tachless() {
+	.min-width(@prefix: ~"") {
+
+		@mapping: {
+			0: 0;
+			full: 100%;
+			min: min-content;
+			max: max-content;
+			fit: fit-content;
+		};
+		
+		each(@mapping, {
+			.@{prefix}min-w-@{key} {
+				min-width: @value;
+			}
+		});
+	}
+}

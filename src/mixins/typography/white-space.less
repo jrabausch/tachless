@@ -1,0 +1,13 @@
+#tachless() {
+	.white-space(@prefix: ~"") {
+
+		@values: normal, nowrap, pre, pre-line, pre-wrap;
+
+		each(@values, {
+
+			.@{prefix}whitespace-@{value} {
+				white-space: @value;
+			}
+		});
+	}
+}

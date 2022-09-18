@@ -1,0 +1,12 @@
+#tachless() {
+	.flex-wrap(@prefix: ~"") {
+
+		@values: wrap, wrap-reverse, nowrap;
+
+		each(@values, {
+			.@{prefix}flex-@{value} {
+				flex-wrap: @value;
+			}
+		});
+	}
+}

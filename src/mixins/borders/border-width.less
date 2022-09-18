@@ -1,0 +1,37 @@
+#tachless() {
+	.border-width(@prefix: ~"") {
+		
+		@mapping: {
+			0: 0;
+			1: 1px;
+			2: .125rem; // 2px
+			3: .1875rem; // 3px
+			4: .25rem; // 4px
+			6: .375rem; // 6px
+			8: .5rem; // 8px
+		};
+
+		each(@mapping, {
+
+			.@{prefix}border-@{key} {
+				border-width: @value;
+			}
+			
+			.@{prefix}border-t-@{key} {
+				border-top-width: @value;
+			}
+		
+			.@{prefix}border-r-@{key} {
+				border-right-width: @value;
+			}
+		
+			.@{prefix}border-b-@{key} {
+				border-bottom-width: @value;
+			}
+		
+			.@{prefix}border-l-@{key} {
+				border-left-width: @value;
+			}
+		});
+	}
+}

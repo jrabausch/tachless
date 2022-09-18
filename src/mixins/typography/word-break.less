@@ -1,0 +1,17 @@
+#tachless() {
+	.word-break(@prefix: ~"") {
+
+		@mapping: {
+			normal: normal;
+			wrap: break-all;
+			nowrap: keep-all;
+		};
+
+		each(@mapping, {
+
+			.@{prefix}word-@{key} {
+				word-break: @value;
+			}
+		});
+	}
+}

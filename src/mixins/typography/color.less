@@ -1,0 +1,26 @@
+#tachless() {
+	.color(@prefix: ~"") {
+
+		each(@colorscheme, {
+
+			@val: ~"var(@{color-prefix}@{key})";
+
+			.@{prefix}color-@{key} {
+				color: @val;
+			}
+		});
+
+		@mapping: {
+			inherit: inherit;
+			current: currentColor;
+			transparent: transparent;
+		};
+
+		each(@mapping, {
+
+			.@{prefix}color-@{key} {
+				color: @value;
+			}
+		});
+	}
+}

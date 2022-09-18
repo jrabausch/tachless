@@ -1,0 +1,13 @@
+#tachless() {
+	.vertical-align(@prefix: ~"") {
+
+		@values: baseline, top, middle, bottom, text-top, text-bottom, sub, super;
+
+		each(@values, {
+
+			.@{prefix}align-@{value} {
+				vertical-align: @value;
+			}
+		});
+	}
+}

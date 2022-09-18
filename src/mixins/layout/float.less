@@ -1,0 +1,12 @@
+#tachless() {
+	.float(@prefix: ~"") {
+
+		@values: left, right, none;
+
+		each(@values, {
+			.@{prefix}float-@{value} {
+				float: @value;
+			}
+		});
+	}
+}

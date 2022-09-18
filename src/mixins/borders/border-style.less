@@ -1,0 +1,12 @@
+#tachless() {
+	.border-style(@prefix: ~"") {
+		
+		@values: solid, dashed, dotted, double, hidden, none;
+
+		each(@values, {
+			.@{prefix}border-@{value} {
+				border-style: @value;
+			}
+		});
+	}
+}

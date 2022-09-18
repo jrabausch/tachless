@@ -1,0 +1,28 @@
+#tachless() {
+	.max-width(@prefix: ~"") {
+
+		each(@maximum, {
+
+			@val: ~"var(@{maximum-prefix}@{key})";
+
+			.@{prefix}max-w-@{key} {
+				max-width: @val;
+			}
+		});
+
+		@mapping: {
+			0: 0;
+			none: none;
+			full: 100%;
+			min: min-content;
+			max: max-content;
+			fit: fit-content;
+		};
+		
+		each(@mapping, {
+			.@{prefix}max-w-@{key} {
+				max-width: @value;
+			}
+		});
+	}
+}

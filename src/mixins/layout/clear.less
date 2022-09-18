@@ -1,0 +1,12 @@
+#tachless() {
+	.clear(@prefix: ~"") {
+
+		@values: left, right, both, none;
+
+		each(@values, {
+			.@{prefix}clear-@{value} {
+				clear: @value;
+			}
+		});
+	}
+}

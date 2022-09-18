@@ -1,0 +1,208 @@
+#tachless() {
+	.coordinates(@prefix: ~"") {
+
+		each(@spacing, {
+
+			@val: ~"var(@{spacing-prefix}@{key})";
+
+			.@{prefix}top-@{key}{
+				top: @val;
+			}
+
+			.@{prefix}right-@{key}{
+				right: @val;
+			}
+
+			.@{prefix}bottom-@{key}{
+				bottom: @val;
+			}
+
+			.@{prefix}left-@{key}{
+				left: @val;
+			}
+
+			.@{prefix}inset-@{key} {
+				top: @val;
+				right: @val;
+				bottom: @val;
+				left: @val;
+			}
+
+			.@{prefix}inset-h-@{key} {
+				left: @val;
+				right: @val;
+			}
+
+			.@{prefix}inset-v-@{key} {
+				top: @val;
+				bottom: @val;
+			}
+
+			// negative
+
+			@negative: ~"calc(-1 * @{val})";
+
+			.@{prefix}-top-@{key}{
+				top: @negative;
+			}
+
+			.@{prefix}-right-@{key}{
+				right: @negative;
+			}
+
+			.@{prefix}-bottom-@{key}{
+				bottom: @negative;
+			}
+
+			.@{prefix}-left-@{key}{
+				left: @negative;
+			}
+
+			.@{prefix}-inset-@{key} {
+				top: @negative;
+				right: @negative;
+				bottom: @negative;
+				left: @negative;
+			}
+
+			.@{prefix}-inset-h-@{key} {
+				left: @negative;
+				right: @negative;
+			}
+
+			.@{prefix}-inset-v-@{key} {
+				top: @negative;
+				bottom: @negative;
+			}
+		});
+
+		@fractions: {
+			1_2: 50%;
+			// TODO: use calc functions
+			1_3: 33.33333333333333%;
+			2_3: 66.66666666666667%;
+			1_4: 25%;
+			3_4: 75%;
+			1_5: 20%;
+			2_5: 40%;
+			3_5: 60%;
+			4_5: 80%;
+			full: 100%;
+		};
+
+		each(@fractions, {
+
+			@k: replace(@key, "_", "\/");
+
+			.@{prefix}top-@{k}{
+				top: @value;
+			}
+
+			.@{prefix}right-@{k}{
+				right: @value;
+			}
+
+			.@{prefix}bottom-@{k}{
+				bottom: @value;
+			}
+
+			.@{prefix}left-@{k}{
+				left: @value;
+			}
+
+			.@{prefix}inset-@{k} {
+				top: @value;
+				right: @value;
+				bottom: @value;
+				left: @value;
+			}
+
+			.@{prefix}inset-h-@{k} {
+				left: @value;
+				right: @value;
+			}
+
+			.@{prefix}inset-v-@{k} {
+				top: @value;
+				bottom: @value;
+			}
+
+			// negative
+
+			.@{prefix}-top-@{k}{
+				top: -@value;
+			}
+
+			.@{prefix}-right-@{k}{
+				right: -@value;
+			}
+
+			.@{prefix}-bottom-@{k}{
+				bottom: -@value;
+			}
+
+			.@{prefix}-left-@{k}{
+				left: -@value;
+			}
+
+			.@{prefix}-inset-@{k} {
+				top: -@value;
+				right: -@value;
+				bottom: -@value;
+				left: -@value;
+			}
+
+			.@{prefix}-inset-h-@{k} {
+				left: -@value;
+				right: -@value;
+			}
+
+			.@{prefix}-inset-v-@{k} {
+				top: -@value;
+				bottom: -@value;
+			}
+		});
+
+
+		@mapping: {
+			0: 0;
+			auto: auto;
+		};
+
+		each(@mapping, {
+
+			.@{prefix}top-@{key}{
+				top: @value;
+			}
+
+			.@{prefix}right-@{key}{
+				right: @value;
+			}
+
+			.@{prefix}bottom-@{key}{
+				bottom: @value;
+			}
+
+			.@{prefix}left-@{key}{
+				left: @value;
+			}
+
+			.@{prefix}inset-@{key} {
+				top: @value;
+				right: @value;
+				bottom: @value;
+				left: @value;
+			}
+
+			.@{prefix}inset-h-@{key} {
+				left: @value;
+				right: @value;
+			}
+
+			.@{prefix}inset-v-@{key} {
+				top: @value;
+				bottom: @value;
+			}
+		});
+	}
+}

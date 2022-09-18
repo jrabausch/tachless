@@ -1,0 +1,13 @@
+#tachless() {
+	.text-align(@prefix: ~"") {
+
+		@values: left, right, center, justify, start, end;
+
+		each(@values, {
+
+			.@{prefix}text-@{value} {
+				text-align: @value;
+			}
+		});
+	}
+}

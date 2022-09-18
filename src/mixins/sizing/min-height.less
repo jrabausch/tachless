@@ -1,0 +1,19 @@
+#tachless() {
+	.min-height(@prefix: ~"") {
+
+		@mapping: {
+			0: 0;
+			screen: 100vh;
+			full: 100%;
+			min: min-content;
+			max: max-content;
+			fit: fit-content;
+		};
+		
+		each(@mapping, {
+			.@{prefix}min-h-@{key} {
+				min-height: @value;
+			}
+		});
+	}
+}

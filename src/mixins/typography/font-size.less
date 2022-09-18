@@ -1,0 +1,13 @@
+#tachless() {
+	.font-size(@prefix: ~"") {
+
+		each(@fontsize, {
+
+			@val: ~"var(@{fontsize-prefix}@{key})";
+
+			.@{prefix}text-@{key} {
+				font-size: @val;
+			}
+		});
+	}
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@jrabausch/tachless",
+  "version": "1.0.0",
+  "description": "Functional styles written in Less.",
+  "main": "index.js",
+  "scripts": {
+    "build": "lessc src/tachless.less > css/tachless.css && lightningcss --minify css/tachless.css -o css/tachless.min.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrabausch/tachless.git"
+  },
+  "author": "Johannes Rabausch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jrabausch/tachless/issues"
+  },
+  "homepage": "https://github.com/jrabausch/tachless#readme",
+  "devDependencies": {
+    "less": "^4.1.3",
+    "lightningcss-cli": "^1.15.1"
+  }
+}

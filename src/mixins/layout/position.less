@@ -1,0 +1,12 @@
+#tachless() {
+	.position(@prefix: ~"") {
+
+		@values: static, relative, absolute, fixed, sticky;
+
+		each(@values, {
+			.@{prefix}@{value} {
+				position: @value;
+			}
+		});
+	}
+}
