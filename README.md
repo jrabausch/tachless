@@ -1,2 +1,2 @@
 # tachless
-Modified version of Tachyons written in Less.
+Functional styles written in Less.
