@@ -1,30 +1,13 @@
 #tachless() {
 	.transform-translate(@prefix: ~"") {
 
-		each(@spacing, {
+		.@{prefix}translate-x-0{
+			transform: translateX(0);
+		}
 
-			@val: ~"var(@{spacing-prefix}@{key})";
-
-			.@{prefix}translate-x-@{key}{
-				transform: ~"translateX(@{val})";
-			}
-
-			.@{prefix}translate-y-@{key}{
-				transform: ~"translateY(@{val})";
-			}
-
-			// negative
-
-			@negative: ~"calc(-1 * @{val})";
-
-			.@{prefix}-translate-x-@{key}{
-				transform: ~"translateX(@{negative})";
-			}
-
-			.@{prefix}-translate-y-@{key}{
-				transform: ~"translateY(@{negative})";
-			}
-		});
+		.@{prefix}translate-y-0{
+			transform: translateY(0);
+		}
 
 		@fractions: {
 			1_2: 50%;
@@ -63,12 +46,29 @@
 			}
 		});
 
-		.@{prefix}translate-x-0{
-			transform: translateX(0);
-		}
+		each(@spacing, {
 
-		.@{prefix}translate-y-0{
-			transform: translateY(0);
-		}
+			@val: ~"var(@{spacing-prefix}@{key})";
+
+			.@{prefix}translate-x-@{key}{
+				transform: ~"translateX(@{val})";
+			}
+
+			.@{prefix}translate-y-@{key}{
+				transform: ~"translateY(@{val})";
+			}
+
+			// negative
+
+			@negative: ~"calc(-1 * @{val})";
+
+			.@{prefix}-translate-x-@{key}{
+				transform: ~"translateX(@{negative})";
+			}
+
+			.@{prefix}-translate-y-@{key}{
+				transform: ~"translateY(@{negative})";
+			}
+		});
 	}
 }

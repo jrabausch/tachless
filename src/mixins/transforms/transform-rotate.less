@@ -1,6 +1,14 @@
 #tachless() {
 	.transform-rotate(@prefix: ~"") {
 
+		.@{prefix}rotate-0 {
+			transform: rotate(0);
+		}
+
+		.@{prefix}rotate-180 {
+			transform: rotate(180deg);
+		}
+
 		@mapping: {
 			1: 1deg;
 			2: 2deg;
@@ -21,13 +29,5 @@
 				transform: ~"rotate(-@{value})";
 			}
 		});
-
-		.@{prefix}rotate-0 {
-			transform: rotate(0);
-		}
-
-		.@{prefix}rotate-180 {
-			transform: rotate(180deg);
-		}
 	}
 }

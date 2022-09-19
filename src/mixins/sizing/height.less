@@ -1,16 +1,9 @@
 #tachless() {
 	.height(@prefix: ~"") {
 
-		each(@spacing, {
-
-			@val: ~"var(@{spacing-prefix}@{key})";
-
-			.@{prefix}h-@{key} {
-				height: @val;
-			}
-		});
-
 		@mapping: {
+			0: 0;
+			auto: auto;
 			1_2: 50%;
 			1_3: calc(100% / 3);
 			2_3: calc(100% / 1.5);
@@ -20,8 +13,6 @@
 			2_5: 40%;
 			3_5: 60%;
 			4_5: 80%;
-			0: 0;
-			auto: auto;
 			full: 100%;
 			screen: 100vh;
 			min: min-content;
@@ -33,6 +24,15 @@
 			@k: replace(@key, "_", "\/");
 			.@{prefix}h-@{k} {
 				height: @value;
+			}
+		});
+
+		each(@spacing, {
+
+			@val: ~"var(@{spacing-prefix}@{key})";
+
+			.@{prefix}h-@{key} {
+				height: @val;
 			}
 		});
 	}

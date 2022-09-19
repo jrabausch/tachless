@@ -1,7 +1,7 @@
 #tachless() {
 	.clear(@prefix: ~"") {
 
-		@values: left, right, both, none;
+		@values: none, left, right, both;
 
 		each(@values, {
 			.@{prefix}clear-@{value} {

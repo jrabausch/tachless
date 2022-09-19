@@ -1,6 +1,44 @@
 #tachless() {
 	.margin(@prefix: ~"") {
 
+		@mapping: {
+			0: 0;
+			auto: auto;
+		};
+
+		each(@mapping, {
+
+			.@{prefix}m-@{key} {
+				margin: @value;
+			}
+
+			.@{prefix}mt-@{key} {
+				margin-top: @value;
+			}
+
+			.@{prefix}mr-@{key} {
+				margin-right: @value;
+			}
+
+			.@{prefix}mb-@{key} {
+				margin-bottom: @value;
+			}
+
+			.@{prefix}ml-@{key} {
+				margin-left: @value;
+			}
+
+			.@{prefix}mh-@{key} {
+				margin-left: @value;
+				margin-right: @value;
+			}
+
+			.@{prefix}mv-@{key} {
+				margin-top: @value;
+				margin-bottom: @value;
+			}
+		});
+
 		each(@spacing, {
 
 			@val: ~"var(@{spacing-prefix}@{key})";
@@ -67,44 +105,6 @@
 			.@{prefix}-mv-@{key} {
 				margin-top: @negative;
 				margin-bottom: @negative;
-			}
-		});
-		
-		@mapping: {
-			0: 0;
-			auto: auto;
-		};
-
-		each(@mapping, {
-
-			.@{prefix}m-@{key} {
-				margin: @value;
-			}
-
-			.@{prefix}mt-@{key} {
-				margin-top: @value;
-			}
-
-			.@{prefix}mr-@{key} {
-				margin-right: @value;
-			}
-
-			.@{prefix}mb-@{key} {
-				margin-bottom: @value;
-			}
-
-			.@{prefix}ml-@{key} {
-				margin-left: @value;
-			}
-
-			.@{prefix}mh-@{key} {
-				margin-left: @value;
-				margin-right: @value;
-			}
-
-			.@{prefix}mv-@{key} {
-				margin-top: @value;
-				margin-bottom: @value;
 			}
 		});
 	}

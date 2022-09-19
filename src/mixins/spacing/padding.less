@@ -1,6 +1,36 @@
 #tachless() {
 	.padding(@prefix: ~"") {
 
+		.@{prefix}p-0 {
+			padding: 0;
+		}
+
+		.@{prefix}pt-0 {
+			padding-top: 0;
+		}
+
+		.@{prefix}pr-0 {
+			padding-right: 0;
+		}
+
+		.@{prefix}pb-0 {
+			padding-bottom: 0;
+		}
+
+		.@{prefix}pl-0 {
+			padding-left: 0;
+		}
+
+		.@{prefix}ph-0 {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.@{prefix}pv-0 {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
 		each(@spacing, {
 
 			@val: ~"var(@{spacing-prefix}@{key})";
@@ -35,35 +65,5 @@
 				padding-bottom: @val;
 			}
 		});
-
-		.@{prefix}p-0 {
-			padding: 0;
-		}
-
-		.@{prefix}pt-0 {
-			padding-top: 0;
-		}
-
-		.@{prefix}pr-0 {
-			padding-right: 0;
-		}
-
-		.@{prefix}pb-0 {
-			padding-bottom: 0;
-		}
-
-		.@{prefix}pl-0 {
-			padding-left: 0;
-		}
-
-		.@{prefix}ph-0 {
-			padding-left: 0;
-			padding-right: 0;
-		}
-
-		.@{prefix}pv-0 {
-			padding-top: 0;
-			padding-bottom: 0;
-		}
 	}
 }

@@ -1,7 +1,7 @@
 #tachless() {
 	.flex-wrap(@prefix: ~"") {
 
-		@values: wrap, wrap-reverse, nowrap;
+		@values: nowrap, wrap, wrap-reverse;
 
 		each(@values, {
 			.@{prefix}flex-@{value} {

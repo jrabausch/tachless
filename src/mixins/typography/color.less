@@ -1,15 +1,6 @@
 #tachless() {
 	.color(@prefix: ~"") {
 
-		each(@colorscheme, {
-
-			@val: ~"var(@{color-prefix}@{key})";
-
-			.@{prefix}color-@{key} {
-				color: @val;
-			}
-		});
-
 		@mapping: {
 			inherit: inherit;
 			current: currentColor;
@@ -20,6 +11,15 @@
 
 			.@{prefix}color-@{key} {
 				color: @value;
+			}
+		});
+
+		each(@colorscheme, {
+
+			@val: ~"var(@{color-prefix}@{key})";
+
+			.@{prefix}color-@{key} {
+				color: @val;
 			}
 		});
 	}

@@ -1,6 +1,18 @@
 #tachless() {
 	.z-index(@prefix: ~"") {
 
+		@mapping: {
+			0: 0;
+			auto: auto;
+			max: 2147483647;
+		};
+
+		each(@mapping, {
+			.@{prefix}z-@{key} {
+				z-index: @value;
+			}
+		});
+
 		@values: 1, 2, 3, 4, 5, 99, 999;
 
 		each(@values, {
@@ -9,18 +21,6 @@
 			}
 			.@{prefix}-z-@{value} {
 				z-index: -@value;
-			}
-		});
-
-		@mapping: {
-			0: 0;
-			max: 2147483647;
-			auto: auto;
-		};
-
-		each(@mapping, {
-			.@{prefix}z-@{key} {
-				z-index: @value;
 			}
 		});
 	}

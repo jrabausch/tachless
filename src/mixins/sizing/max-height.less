@@ -1,15 +1,6 @@
 #tachless() {
 	.max-height(@prefix: ~"") {
-
-		each(@spacing, {
-
-			@val: ~"var(@{spacing-prefix}@{key})";
-
-			.@{prefix}max-h-@{key} {
-				max-height: @val;
-			}
-		});
-
+		
 		@mapping: {
 			0: 0;
 			screen: 100vh;
@@ -22,6 +13,15 @@
 		each(@mapping, {
 			.@{prefix}max-h-@{key} {
 				max-height: @value;
+			}
+		});
+
+		each(@spacing, {
+
+			@val: ~"var(@{spacing-prefix}@{key})";
+
+			.@{prefix}max-h-@{key} {
+				max-height: @val;
 			}
 		});
 	}

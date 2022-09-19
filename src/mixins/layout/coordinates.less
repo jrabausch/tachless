@@ -1,6 +1,47 @@
 #tachless() {
 	.coordinates(@prefix: ~"") {
 
+		@mapping: {
+			0: 0;
+			auto: auto;
+		};
+
+		each(@mapping, {
+
+			.@{prefix}top-@{key}{
+				top: @value;
+			}
+
+			.@{prefix}right-@{key}{
+				right: @value;
+			}
+
+			.@{prefix}bottom-@{key}{
+				bottom: @value;
+			}
+
+			.@{prefix}left-@{key}{
+				left: @value;
+			}
+
+			.@{prefix}inset-@{key} {
+				top: @value;
+				right: @value;
+				bottom: @value;
+				left: @value;
+			}
+
+			.@{prefix}inset-h-@{key} {
+				left: @value;
+				right: @value;
+			}
+
+			.@{prefix}inset-v-@{key} {
+				top: @value;
+				bottom: @value;
+			}
+		});
+
 		each(@spacing, {
 
 			@val: ~"var(@{spacing-prefix}@{key})";
@@ -160,48 +201,6 @@
 			.@{prefix}-inset-v-@{k} {
 				top: -@value;
 				bottom: -@value;
-			}
-		});
-
-
-		@mapping: {
-			0: 0;
-			auto: auto;
-		};
-
-		each(@mapping, {
-
-			.@{prefix}top-@{key}{
-				top: @value;
-			}
-
-			.@{prefix}right-@{key}{
-				right: @value;
-			}
-
-			.@{prefix}bottom-@{key}{
-				bottom: @value;
-			}
-
-			.@{prefix}left-@{key}{
-				left: @value;
-			}
-
-			.@{prefix}inset-@{key} {
-				top: @value;
-				right: @value;
-				bottom: @value;
-				left: @value;
-			}
-
-			.@{prefix}inset-h-@{key} {
-				left: @value;
-				right: @value;
-			}
-
-			.@{prefix}inset-v-@{key} {
-				top: @value;
-				bottom: @value;
 			}
 		});
 	}

@@ -1,15 +1,6 @@
 #tachless() {
 	.border-color(@prefix: ~"") {
 
-		each(@colorscheme, {
-
-			@val: ~"var(@{color-prefix}@{key})";
-
-			.@{prefix}border-color-@{key} {
-				border-color: @val;
-			}
-		});
-
 		@mapping: {
 			inherit: inherit;
 			current: currentColor;
@@ -20,6 +11,15 @@
 
 			.@{prefix}border-color-@{key} {
 				border-color: @value;
+			}
+		});
+
+		each(@colorscheme, {
+
+			@val: ~"var(@{color-prefix}@{key})";
+
+			.@{prefix}border-color-@{key} {
+				border-color: @val;
 			}
 		});
 	}

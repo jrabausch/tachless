@@ -1,7 +1,7 @@
 #tachless() {
 	.border-style(@prefix: ~"") {
 		
-		@values: solid, dashed, dotted, double, hidden, none;
+		@values: none, solid, dashed, dotted, double, hidden;
 
 		each(@values, {
 			.@{prefix}border-@{value} {
