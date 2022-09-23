@@ -4,6 +4,7 @@
   "description": "Functional styles written in Less.",
   "main": "index.js",
   "scripts": {
+    "start": "serve -n -p 8080",
     "build": "lessc src/tachless.less > css/tachless.css && lightningcss --minify css/tachless.css -o css/tachless.min.css"
   },
   "repository": {
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/jrabausch/tachless#readme",
   "devDependencies": {
     "less": "^4.1.3",
-    "lightningcss-cli": "^1.15.1"
+    "lightningcss-cli": "^1.15.1",
+    "serve": "^14.0.1"
   }
 }
