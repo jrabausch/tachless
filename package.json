@@ -4,7 +4,7 @@
   "description": "Functional styles written in Less.",
   "main": "index.js",
   "scripts": {
-    "start": "serve -n -p 8080",
+    "start": "serve -n -p 1234",
     "build": "lessc src/tachless.less > css/tachless.css && lightningcss --minify css/tachless.css -o css/tachless.min.css"
   },
   "repository": {
