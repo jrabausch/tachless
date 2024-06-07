@@ -1,0 +1,13 @@
+#tachless() {
+	.gap(@prefix: ~"") {
+
+		each(@spacing, {
+
+			@val: ~"var(@{spacing-prefix}@{key})";
+
+			.@{prefix}gap-@{key} {
+				gap: @val;
+			}
+		});
+	}
+}
