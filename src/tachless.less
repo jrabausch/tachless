@@ -103,6 +103,7 @@
 	#tachless.z-index(@prefix);
 	#tachless.columns(@prefix);
 	#tachless.coordinates(@prefix);
+	#tachless.container(@prefix);
 
 	// spacing
 	#tachless.margin(@prefix);
@@ -172,15 +173,15 @@
 
 // render breakpoints
 @breakpoints: {
-	m: ~"(min-width: 768px)";
-	l: ~"(min-width: 1152px)";
+	m: ~"(min-width: 48rem)";
+	l: ~"(min-width: 80rem)";
 };
 
 each(@breakpoints, {
 
 	@prefix: ~"@{key}\:";
 
-	@media @value {
+	@container @value {
 		.render(@prefix);
 	}
 });
